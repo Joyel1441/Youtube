@@ -21,7 +21,7 @@ def form():
         title = yt.title
         # download video 
         if res == "high_res":
-           video[-1].download("./videos")
+           video = yt.streams.get_highest_resolution()
         elif res == "low_res":
            video[0].download("./videos")
            
