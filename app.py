@@ -1,7 +1,6 @@
 from flask import Flask,render_template,request,send_from_directory
 from pytube import YouTube
 import os
-import glob
 
 app = Flask(__name__)
 
