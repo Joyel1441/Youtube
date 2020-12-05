@@ -11,7 +11,7 @@ def index():
 @app.route("/form",methods=["POST"])
 def form():
  if request.method == "POST":
-     #get url and resolution
+     # get url and resolution
      url = request.form["url"]
      res = request.form["res"]
      try:
