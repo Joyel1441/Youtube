@@ -21,7 +21,7 @@ def form():
         title = yt.title
         # download video 
         if res == "high_res":
-           video = yt.streams.get_highest_resolution()
+           video[-1].download("./videos")
         elif res == "low_res":
            video[0].download("./videos")
            
@@ -34,8 +34,8 @@ def form():
         # send the downloaded video to the user
         return send_from_directory(directory="./videos", filename=title+".mp4", as_attachment=True)
      except:
-        return render_template("index.html",error="Error")
-     return render_template("index.html",error="Error") 
+        return render_template("index.html",error="Error: enter correct link or try different resolution")
+     return render_template("index.html",error="Error:  enter correct link or try different resolution") 
     
 if __name__ == "__main__":
   app.run()
